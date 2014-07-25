@@ -23,7 +23,6 @@ def define(rrd_file_name):
     rras.append(RRA(cf='AVERAGE', xff='0.5', steps=300, rows=8640))
     # 1 * 3660 * 8640 = 366day = 1year
     rras.append(RRA(cf='AVERAGE', xff='0.5', steps=3660, rows=8640))
-    rrd_file_name = '/tmp/mem.rrd'
     start_time = int(time.time())
     mem_rrd = RRD(filename=rrd_file_name, start=start_time, step=1, ds=data_sources, rra=rras)
     return mem_rrd
