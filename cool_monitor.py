@@ -1,3 +1,4 @@
+#sys.path.extend(['/home/coolbit/computer/python/project_cool_monitor'])
 from src import rrd_cpu, rrd_memory, rrd_network
 import argparse
 import threading

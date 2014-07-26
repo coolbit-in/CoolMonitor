@@ -2,16 +2,33 @@ from src import mkimg_cpu, mkimg_memory, mkimg_network
 import argparse
 import time
 
+def time_parser(time_str):
+    time_list = map(int, time_str.split('/'))
+    #TODO check length
+    time_list += [0] * (9 - len(time_list))
+    return int(time.mktime(time_list))
 
 def check_time():
     if args.block is None:
         #TODO check -e -s
-        pass
+        if args.end is None:
+            end_time = int(time.time())
+        else:
+            end_time = time_parser(args.end)
+        if args.start is None:
+            #Default 1 hour
+            start_time = end_time - 3600
+        else:
+            start_time = time_parser(args.start)
     else:
         num, unit = args.block.split(':')
         num = int(num)
+        #TODO Error Integer Exception
         time_block = 0
-        if unit == 'S':
+        if unit not in ['S', 'M', 'H', 'D']:
+            print "Time unit must be S|M|H|D."
+            exit(1)
+        elif unit == 'S':
             time_block = num
         elif unit == 'M':
             time_block = num * 60
@@ -19,9 +36,6 @@ def check_time():
             time_block = num * 60 * 60
         elif unit == 'D':
             time_block = num * 60 * 60 * 24
-        else:
-            #TODO Error Exception
-            pass
         end_time = int(time.time())
         start_time = end_time - time_block
     return start_time, end_time
