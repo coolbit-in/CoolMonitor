@@ -2,7 +2,6 @@ import os
 from pyrrd.graph import Graph, LINE, DEF, CDEF, AREA
 
 def draw(rrd_file_name, img_file_name, start_time, end_time):
-    rrd_file_name = '/tmp/mem.rrd'
     mem_total = os.popen("free -b | head -2 | tail -1 | awk '{print $2}'").read()
     data_mem_used = DEF(vname='used', rrdfile=rrd_file_name, dsName='mem_used')
     #data_mem_free = DEF(vname='free', rrdfile=rrd_file_name, dsName='mem_free')
