@@ -19,7 +19,7 @@ def draw(rrd_file_name, img_file_name, start_time, end_time):
     area_user= AREA(defObj=cdata_user_add_nice, color='#0000FF', legend='User', stack=True)
     area_iowait= AREA(defObj=cdata_iowait, color='#00FF00', legend='IO', stack=True)
     area_irq= AREA(defObj=cdata_irq_add_softirq, color='#FFFF00', legend='IRQ', stack=True)
-    img = Graph(filename=img_file_name, start=start_time, end=end_time, title='cpu\ load')
+    img = Graph(filename=img_file_name, start=start_time, end=end_time, title='Cpu\ Load')
     img.data.extend([data_total, data_user, data_nice, data_system, data_iowait, data_irq, data_softirq, cdata_system, cdata_user_add_nice, cdata_iowait, cdata_irq_add_softirq,area_system, area_user, area_iowait, area_irq, line_total])
     img.write()
 

@@ -10,7 +10,6 @@ def time_parser(time_str):
 
 def check_time():
     if args.block is None:
-        #TODO check -e -s
         if args.end is None:
             end_time = int(time.time())
         else:

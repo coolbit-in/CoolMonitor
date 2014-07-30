@@ -12,7 +12,7 @@ def draw(rrd_file_name, img_file_name, start_time, end_time):
 
     line_total = LINE(value=int(mem_total), color='#000000', legend='Total')
     area_used = AREA(defObj=data_mem_real_used, color='#FF0000', legend='Used')
-    area_buffers_and_cached = AREA(defObj=data_mem_buffers_and_cached_over_used, color='#0000FF', legend='Buffers And Cached Over Used', stack=True)
+    area_buffers_and_cached = AREA(defObj=data_mem_buffers_and_cached_over_used, color='#0000FF', legend='Cached', stack=True)
     img = Graph(filename=img_file_name, title='Memory\ Infomation', start=start_time, end=end_time, base=1024)
     img.data.extend([data_mem_used, data_mem_buffers, data_mem_cached, data_mem_buffers_and_cached_over_used,data_mem_real_used, line_total, area_used, area_buffers_and_cached])
     img.write()
