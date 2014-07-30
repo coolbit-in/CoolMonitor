@@ -21,6 +21,6 @@ def api():
     script_path = '/home/coolbit/computer/python/project_cool_monitor/make_image.py'
     command_line = 'python {script_path} -{rq_type} -b {time_b}:{time_unit} {rrd_file_root}/{rrd_file_name} {img_file_root}/{img_file_name}'.format(script_path=script_path, rq_type=rq_type, time_b=time_b, time_unit=time_unit, rrd_file_root=rrd_file_root, rrd_file_name=rrd_file_name, img_file_root=img_file_root, img_file_name=img_file_name)
     os.popen(command_line)
-    return static_file(filename=img_file_name, root=img_file_root, mimetype='image/svg+xml')
+    return static_file(filename=img_file_name, root=img_file_root, mimetype='image/png')
 
 run(host='127.0.0.1', port='9001', debug=True)

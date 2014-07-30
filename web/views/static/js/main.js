@@ -35,22 +35,22 @@ $(document).ready(function() {
     });
     $('button.tag-1h.tag-cpu').click(function(){
         $.get('/api?type=c&b=1&unit=H', function() {
-            $('img#img-cpu').attr('src','/api?type=c&b=1l&unit=H')
+            $('img#img-cpu').attr('src','/api?type=c&b=1&unit=H')
         });
     });
     $('button.tag-1d.tag-cpu').click(function(){
         $.get('/api?type=c&b=1&unit=D', function() {
-            $('img#img-cpu').attr('src','/api?type=c&b=1l&unit=D')
+            $('img#img-cpu').attr('src','/api?type=c&b=1&unit=D')
         });
     });
     $('button.tag-7d.tag-cpu').click(function(){
         $.get('/api?type=c&b=7&unit=D', function() {
-            $('img#img-cpu').attr('src','/api?type=c&b=7l&unit=D')
+            $('img#img-cpu').attr('src','/api?type=c&b=7&unit=D')
         });
     });
     $('button.tag-30d.tag-cpu').click(function(){
         $.get('/api?type=c&b=30&unit=D', function() {
-            $('img#img-cpu').attr('src','/api?type=c&b=30l&unit=D')
+            $('img#img-cpu').attr('src','/api?type=c&b=30&unit=D')
         });
     });
 
