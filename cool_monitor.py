@@ -1,5 +1,5 @@
-#sys.path.extend(['/home/coolbit/computer/python/project_cool_monitor'])
-from src import rrd_cpu, rrd_memory, rrd_network
+#!/usr/bin/env python
+from src import rrd_cpu, rrd_memory, rrd_network, rrd_swap
 import argparse
 import threading
 args_parser = argparse.ArgumentParser()
@@ -14,6 +14,7 @@ print args.path
 cpu_rrd_file_name = args.path + 'cpu.rrd'
 memory_rrd_file_name = args.path + 'mem.rrd'
 network_rrd_file_name = args.path + 'net.rrd'
+swap_rrd_file_name = args.path + 'swap.rrd'
 
 def target_cpu():
     rrd_cpu.run(cpu_rrd_file_name, args.new)
@@ -23,9 +24,12 @@ def target_memory():
 
 def target_network():
     rrd_network.run(network_rrd_file_name, args.new)
+def target_swap():
+    rrd_swap.run(swap_rrd_file_name, args.new)
 
 threading.Thread(target=target_cpu).start()
 threading.Thread(target=target_memory).start()
 threading.Thread(target=target_network).start()
+threading.Thread(target=target_swap()).start()
 
 
