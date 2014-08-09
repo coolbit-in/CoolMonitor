@@ -1,4 +1,4 @@
-from src import mkimg_cpu, mkimg_memory, mkimg_network
+from src import mkimg_cpu, mkimg_memory, mkimg_network, mkimg_swap
 import argparse
 import time
 
@@ -45,6 +45,7 @@ if __name__ == '__main__':
     group.add_argument('-c', '--cpu', help='', action='store_true')
     group.add_argument('-m', '--memory', help='', action='store_true')
     group.add_argument('-n', '--network', help='', action='store_true')
+    group.add_argument('-w', '--swap', help='', action='store_true')
     args_parser.add_argument('rrd_file_name', help='')
     args_parser.add_argument('img_file_name', help='')
     args_parser.add_argument('-s','--start', help='[year/mon/day/hour/min/sec]')
@@ -59,4 +60,6 @@ if __name__ == '__main__':
         mkimg_memory.draw(args.rrd_file_name, args.img_file_name, start_time, end_time)
     elif args.network:
         mkimg_network.draw(args.rrd_file_name, args.img_file_name, start_time, end_time)
+    elif args.swap:
+        mkimg_swap.draw(args.rrd_file_name, args.img_file_name, start_time, end_time)
 

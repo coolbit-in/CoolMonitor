@@ -14,8 +14,8 @@ def api():
     rq_type= request.query.type
     time_b = request.query.b
     time_unit = request.query.unit
-    rrd_file_name = {'c': 'cpu.rrd', 'm': 'mem.rrd', 'n': 'net.rrd'}[rq_type]
-    img_file_name = {'c': 'cpu.png', 'm': 'mem.png', 'n': 'net.png'}[rq_type]
+    rrd_file_name = {'c': 'cpu.rrd', 'm': 'mem.rrd', 'n': 'net.rrd', 'w': 'swap.rrd'}[rq_type]
+    img_file_name = {'c': 'cpu.png', 'm': 'mem.png', 'n': 'net.png', 'w': 'swap.png'}[rq_type]
     rrd_file_root = '/home/coolbit/computer/python/project_cool_monitor/tmp'
     img_file_root = 'cache'
     script_path = '/home/coolbit/computer/python/project_cool_monitor/make_image.py'

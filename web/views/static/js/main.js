@@ -80,4 +80,28 @@ $(document).ready(function() {
         });
     });
 
-});
+    $('button.tag-15m.tag-swap').click(function(){
+        $.get('/api?type=w&b=15&unit=M', function() {
+            $('img#img-swap').attr('src','/api?type=w&b=15&unit=M')
+        });
+    });
+    $('button.tag-1h.tag-swap').click(function(){
+        $.get('/api?type=w&b=1&unit=H', function() {
+            $('img#img-swap').attr('src','/api?type=w&b=1&unit=H')
+        });
+    });
+    $('button.tag-1d.tag-swap').click(function(){
+        $.get('/api?type=w&b=1&unit=D', function() {
+            $('img#img-swap').attr('src','/api?type=w&b=1&unit=D')
+        });
+    });
+    $('button.tag-7d.tag-swap').click(function(){
+        $.get('/api?type=w&b=7&unit=D', function() {
+            $('img#img-swap').attr('src','/api?type=w&b=7&unit=D')
+        });
+    });
+    $('button.tag-30d.tag-swap').click(function(){
+        $.get('/api?type=w&b=30&unit=D', function() {
+            $('img#img-swap').attr('src','/api?type=w&b=30&unit=D')
+        });
+    });});

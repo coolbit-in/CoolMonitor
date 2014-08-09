@@ -79,5 +79,24 @@
         <img id="img-memory" src="/api?type=m&b=1&unit=H">
       </div>
     </div>
-  </div></body>
+  </div>
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+    <h1 class="panel-title">Swap</h1>
+  </div>
+  <div class="panel-body">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default tag-swap tag-15m">15分钟</button>
+      <button type="button" class="btn btn-default tag-swap tag-1h">1小时</button>
+      <button type="button" class="btn btn-default tag-swap tag-1d">1天</button>
+      <button type="button" class="btn btn-default tag-swap tag-6d">7天</button>
+      <button type="button" class="btn btn-default tag-swap tag-30d">30天</button>
+    </div>
+    <div>
+      <img id="img-swap" src="/api?type=w&b=1&unit=H">
+    </div>
+  </div>
+</div>
+</body>
 </html>
